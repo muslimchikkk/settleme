@@ -71,3 +71,9 @@
 
 
 })()
+
+
+
+document.getElementById("contactUsButton").addEventListener('click', () => {
+	document.getElementById('footer-section').scrollIntoView({ behavior: 'smooth' });
+});

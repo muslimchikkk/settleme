@@ -1,6 +1,6 @@
 const pageSections = ['hero-section', 'services-section', 'why-choose-section', 'team-section', 'footer-section'];
 pageSections.forEach(section => {
-    const anchor = document.querySelector(`#${section}`);
+    const anchor = document.querySelectorAll(`#${section}`);
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
