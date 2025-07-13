@@ -1,3 +1,5 @@
+This project uses a free HTML/CSS template.
+
 Template Name: Furni
 Template Author: Untree.co
 Template License: https://creativecommons.org/licenses/by/3.0/
