@@ -70,29 +70,29 @@
 	sitePlusMinus();
 })()
 
-window.addEventListener("DOMContentLoaded", applyGeoLanguage);
+// window.addEventListener("DOMContentLoaded", applyGeoLanguage);
 
 document.getElementById("contactUsButton").addEventListener('click', () => {
 	document.getElementById('footer-section').scrollIntoView({ behavior: 'smooth' });
 });
 
 
-function applyGeoLanguage () {
-		console.log('country', 'debugg')
-	fetch("https://ipwho.is/")
-	.then(res => res.json())
-	.then(data => {
-		const country = data.country_code;
-		console.log(country, 'debugg')
-		switch (country) {
-		// case "RU":
-		// 	window.location.href = "./ru.html";
-		// 	break;
-		case "UZ":
-			window.location.href = "languages/uz.html";
-			break;
-		default:
-			window.location.href = "index.html";
-		}
-	});
-}
+// function applyGeoLanguage () {
+// 		console.log('country', 'debugg')
+// 	fetch("https://ipwho.is/")
+// 	.then(res => res.json())
+// 	.then(data => {
+// 		const country = data.country_code;
+// 		console.log(country, 'debugg')
+// 		switch (country) {
+// 		// case "RU":
+// 		// 	window.location.href = "./ru.html";
+// 		// 	break;
+// 		case "UZ":
+// 			window.location.href = "languages/uz.html";
+// 			break;
+// 		default:
+// 			window.location.href = "index.html";
+// 		}
+// 	});
+// }
