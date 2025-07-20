@@ -1,16 +1,24 @@
-  const phrases = [
+const phrases = {
+  en: [
     "new country.",
     "fresh start.",
     "feel at home."
-  ];
+  ],
+  uz: [
+    'Yangi boshlanish',
+    'Yangi mamlakat',
+    'O‘zingizni uyday his qiling'
+  ]
+};
+
 
   const hookText = document.getElementById("hook-text");
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
 
-  function typeEffect() {
-    const currentPhrase = phrases[phraseIndex];
+  function typeEffect(language = 'en') {
+    const currentPhrase = phrases[language][phraseIndex];
     const visibleText = currentPhrase.substring(0, charIndex);
 
     hookText.textContent = visibleText;
@@ -26,7 +34,7 @@
 
       if (!isDeleting) {
         // Move to next phrase
-        phraseIndex = (phraseIndex + 1) % phrases.length;
+        phraseIndex = (phraseIndex + 1) % phrases[language].length;
       }
 
       setTimeout(typeEffect, 1500); // pause before next action
@@ -34,5 +42,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    typeEffect();
+     const language = document.documentElement.lang;
+     console.log(language, 'debug:: language');
+    typeEffect(language);
   });
