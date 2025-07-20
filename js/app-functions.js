@@ -68,12 +68,9 @@
 		
 	};
 	sitePlusMinus();
-
-	applyGeoLanguage();
-
 })()
 
-
+window.addEventListener("DOMContentLoaded", applyGeoLanguage);
 
 document.getElementById("contactUsButton").addEventListener('click', () => {
 	document.getElementById('footer-section').scrollIntoView({ behavior: 'smooth' });
