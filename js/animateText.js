@@ -16,9 +16,10 @@ const phrases = {
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-
-  function typeEffect(language = 'en') {
-    const currentPhrase = phrases[language][phraseIndex];
+ 
+  let currentLanguage = 'en';
+  function typeEffect() {
+    const currentPhrase = phrases[currentLanguage][phraseIndex];
     const visibleText = currentPhrase.substring(0, charIndex);
 
     hookText.textContent = visibleText;
@@ -34,7 +35,7 @@ const phrases = {
 
       if (!isDeleting) {
         // Move to next phrase
-        phraseIndex = (phraseIndex + 1) % phrases[language].length;
+        phraseIndex = (phraseIndex + 1) % phrases[currentLanguage].length;
       }
 
       setTimeout(typeEffect, 1500); // pause before next action
@@ -42,7 +43,6 @@ const phrases = {
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-     const language = document.documentElement.lang;
-     console.log(language, 'debug:: language');
-    typeEffect(language);
+    currentLanguage = document.documentElement.lang;
+    typeEffect();
   });
